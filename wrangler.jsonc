@@ -1,0 +1,22 @@
+// Configuration Cloudflare — utile seulement si un jour vous branchez le
+// déploiement automatique depuis GitHub. Pour l'instant, le Worker se met à
+// jour en collant src/worker.js dans l'éditeur du tableau de bord.
+//
+// ATTENTION : ne jamais écrire GHL_TOKEN ici. C'est un secret, il se règle
+// dans Cloudflare (Settings > Variables and Secrets > type "Secret").
+{
+  "name": "indice-couple",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-09-01",
+
+  // Variables non sensibles. Le token N'EST PAS ici, volontairement.
+  "vars": {
+    "GHL_LOCATION_ID": "À_REMPLIR",
+    "CALENDRIER": "https://à-remplir",
+    "CONFIDENTIALITE": "https://à-remplir"
+  },
+
+  "kv_namespaces": [
+    { "binding": "KV", "id": "ID_DU_NAMESPACE_INDICE_COUPLE" }
+  ]
+}
